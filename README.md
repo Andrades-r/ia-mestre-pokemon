@@ -25,6 +25,7 @@ Para rodar o projeto precisa ter instalado o seguintes pacotes
     <code>
         jupyter notebook .
     </code><br>
-    No Jupyter basta rodar as células em ordem como está no arquivo  Mestre-Pokemon.ipynb, se você preferir rodar o agente sem a interface gráfico com o mapa, ao rodar o comando <code>base.run()</code> você pode passar False como paramêtro ficando <code>base.run(False)</code> para roda-lo mais rápido
+    No Jupyter basta rodar as células em ordem como está no arquivo  Mestre-Pokemon.ipynb, se você preferir rodar o agente sem a interface gráfico com o mapa, ao rodar o comando <code>base.run()</code> você pode passar False como paramêtro ficando <code>base.run(False)</code> para roda-lo mais rápido, porém sem a interface gráfica.
+    Ao final do programa será geraddo o arquivo log.txt na raiz do projeto com a listagem das ações realizada pelo agente.
     
 </p>

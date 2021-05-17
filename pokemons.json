@@ -7,7 +7,7 @@
       "french": "Bulbizarre"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -28,7 +28,7 @@
       "french": "Herbizarre"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -49,7 +49,7 @@
       "french": "Florizarre"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -70,7 +70,7 @@
       "french": "Salamèche"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 39,
@@ -90,7 +90,7 @@
       "french": "Reptincel"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 58,
@@ -110,8 +110,8 @@
       "french": "Dracaufeu"
     },
     "type": [
-      "vulcao",
-      "montanha"
+      "Fire",
+      "Flying"
     ],
     "base": {
       "HP": 78,
@@ -131,7 +131,7 @@
       "french": "Carapuce"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 44,
@@ -151,7 +151,7 @@
       "french": "Carabaffe"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 59,
@@ -171,7 +171,7 @@
       "french": "Tortank"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 79,
@@ -232,7 +232,7 @@
     },
     "type": [
       "Bug",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 60,
@@ -316,7 +316,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 40,
@@ -337,7 +337,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 63,
@@ -358,7 +358,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 83,
@@ -419,7 +419,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 40,
@@ -440,7 +440,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 65,
@@ -500,7 +500,7 @@
       "french": "Pikachu"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 35,
@@ -520,7 +520,7 @@
       "french": "Raichu"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 60,
@@ -574,7 +574,7 @@
   {
     "id": 29,
     "name": {
-      "english": "NidoranF",
+      "english": "Nidoran♀",
       "japanese": "ニドラン♀",
       "chinese": "尼多兰",
       "french": "Nidoran♀"
@@ -635,7 +635,7 @@
   {
     "id": 32,
     "name": {
-      "english": "NidoranM",
+      "english": "Nidoran♂",
       "japanese": "ニドラン♂",
       "chinese": "尼多朗",
       "french": "Nidoran♂"
@@ -742,7 +742,7 @@
       "french": "Goupix"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 38,
@@ -762,7 +762,7 @@
       "french": "Feunard"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 73,
@@ -825,7 +825,7 @@
     },
     "type": [
       "Poison",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 40,
@@ -846,7 +846,7 @@
     },
     "type": [
       "Poison",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 75,
@@ -866,7 +866,7 @@
       "french": "Mystherbe"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -887,7 +887,7 @@
       "french": "Ortide"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -908,7 +908,7 @@
       "french": "Rafflesia"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -930,7 +930,7 @@
     },
     "type": [
       "Bug",
-      "grama"
+      "Grass"
     ],
     "base": {
       "HP": 35,
@@ -951,7 +951,7 @@
     },
     "type": [
       "Bug",
-      "grama"
+      "Grass"
     ],
     "base": {
       "HP": 60,
@@ -1093,7 +1093,7 @@
       "french": "Psykokwak"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 50,
@@ -1113,7 +1113,7 @@
       "french": "Akwakwak"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 80,
@@ -1173,7 +1173,7 @@
       "french": "Caninos"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 55,
@@ -1193,7 +1193,7 @@
       "french": "Arcanin"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 90,
@@ -1213,7 +1213,7 @@
       "french": "Ptitard"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 40,
@@ -1233,7 +1233,7 @@
       "french": "Têtarte"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 65,
@@ -1253,7 +1253,7 @@
       "french": "Tartard"
     },
     "type": [
-      "agua",
+      "Water",
       "Fighting"
     ],
     "base": {
@@ -1394,7 +1394,7 @@
       "french": "Chétiflor"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -1415,7 +1415,7 @@
       "french": "Boustiflor"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -1436,7 +1436,7 @@
       "french": "Empiflor"
     },
     "type": [
-      "grama",
+      "Grass",
       "Poison"
     ],
     "base": {
@@ -1457,7 +1457,7 @@
       "french": "Tentacool"
     },
     "type": [
-      "agua",
+      "Water",
       "Poison"
     ],
     "base": {
@@ -1478,7 +1478,7 @@
       "french": "Tentacruel"
     },
     "type": [
-      "agua",
+      "Water",
       "Poison"
     ],
     "base": {
@@ -1562,7 +1562,7 @@
       "french": "Ponyta"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 50,
@@ -1582,7 +1582,7 @@
       "french": "Galopa"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 65,
@@ -1602,7 +1602,7 @@
       "french": "Ramoloss"
     },
     "type": [
-      "agua",
+      "Water",
       "Psychic"
     ],
     "base": {
@@ -1623,7 +1623,7 @@
       "french": "Flagadoss"
     },
     "type": [
-      "agua",
+      "Water",
       "Psychic"
     ],
     "base": {
@@ -1644,7 +1644,7 @@
       "french": "Magnéti"
     },
     "type": [
-      "caverna",
+      "Electric",
       "Steel"
     ],
     "base": {
@@ -1665,7 +1665,7 @@
       "french": "Magnéton"
     },
     "type": [
-      "caverna",
+      "Electric",
       "Steel"
     ],
     "base": {
@@ -1680,14 +1680,14 @@
   {
     "id": 83,
     "name": {
-      "english": "Farfetchd",
+      "english": "Farfetch`d",
       "japanese": "カモネギ",
       "chinese": "大葱鸭",
       "french": "Canarticho"
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 52,
@@ -1708,7 +1708,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 35,
@@ -1729,7 +1729,7 @@
     },
     "type": [
       "Normal",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 60,
@@ -1749,7 +1749,7 @@
       "french": "Otaria"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 65,
@@ -1769,7 +1769,7 @@
       "french": "Lamantine"
     },
     "type": [
-      "agua",
+      "Water",
       "Ice"
     ],
     "base": {
@@ -1830,7 +1830,7 @@
       "french": "Kokiyas"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 30,
@@ -1850,7 +1850,7 @@
       "french": "Crustabri"
     },
     "type": [
-      "agua",
+      "Water",
       "Ice"
     ],
     "base": {
@@ -1995,7 +1995,7 @@
       "french": "Krabby"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 30,
@@ -2015,7 +2015,7 @@
       "french": "Krabboss"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 55,
@@ -2035,7 +2035,7 @@
       "french": "Voltorbe"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 40,
@@ -2055,7 +2055,7 @@
       "french": "Électrode"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 60,
@@ -2075,7 +2075,7 @@
       "french": "Noeunoeuf"
     },
     "type": [
-      "grama",
+      "Grass",
       "Psychic"
     ],
     "base": {
@@ -2096,7 +2096,7 @@
       "french": "Noadkoko"
     },
     "type": [
-      "grama",
+      "Grass",
       "Psychic"
     ],
     "base": {
@@ -2319,7 +2319,7 @@
       "french": "Saquedeneu"
     },
     "type": [
-      "grama"
+      "Grass"
     ],
     "base": {
       "HP": 65,
@@ -2359,7 +2359,7 @@
       "french": "Hypotrempe"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 30,
@@ -2379,7 +2379,7 @@
       "french": "Hypocéan"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 55,
@@ -2399,7 +2399,7 @@
       "french": "Poissirène"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 45,
@@ -2419,7 +2419,7 @@
       "french": "Poissoroy"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 80,
@@ -2439,7 +2439,7 @@
       "french": "Stari"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 30,
@@ -2459,7 +2459,7 @@
       "french": "Staross"
     },
     "type": [
-      "agua",
+      "Water",
       "Psychic"
     ],
     "base": {
@@ -2474,7 +2474,7 @@
   {
     "id": 122,
     "name": {
-      "english": "MrMime",
+      "english": "Mr. Mime",
       "japanese": "バリヤード",
       "chinese": "魔墙人偶",
       "french": "M. Mime"
@@ -2502,7 +2502,7 @@
     },
     "type": [
       "Bug",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 70,
@@ -2543,7 +2543,7 @@
       "french": "Élektek"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 65,
@@ -2563,7 +2563,7 @@
       "french": "Magmar"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 65,
@@ -2623,7 +2623,7 @@
       "french": "Magicarpe"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 20,
@@ -2643,8 +2643,8 @@
       "french": "Léviator"
     },
     "type": [
-      "agua",
-      "montanha"
+      "Water",
+      "Flying"
     ],
     "base": {
       "HP": 95,
@@ -2664,7 +2664,7 @@
       "french": "Lokhlass"
     },
     "type": [
-      "agua",
+      "Water",
       "Ice"
     ],
     "base": {
@@ -2725,7 +2725,7 @@
       "french": "Aquali"
     },
     "type": [
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 130,
@@ -2745,7 +2745,7 @@
       "french": "Voltali"
     },
     "type": [
-      "caverna"
+      "Electric"
     ],
     "base": {
       "HP": 65,
@@ -2765,7 +2765,7 @@
       "french": "Pyroli"
     },
     "type": [
-      "vulcao"
+      "Fire"
     ],
     "base": {
       "HP": 65,
@@ -2806,7 +2806,7 @@
     },
     "type": [
       "Rock",
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 35,
@@ -2827,7 +2827,7 @@
     },
     "type": [
       "Rock",
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 70,
@@ -2848,7 +2848,7 @@
     },
     "type": [
       "Rock",
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 30,
@@ -2869,7 +2869,7 @@
     },
     "type": [
       "Rock",
-      "agua"
+      "Water"
     ],
     "base": {
       "HP": 60,
@@ -2890,7 +2890,7 @@
     },
     "type": [
       "Rock",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 80,
@@ -2931,7 +2931,7 @@
     },
     "type": [
       "Ice",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 90,
@@ -2951,8 +2951,8 @@
       "french": "Électhor"
     },
     "type": [
-      "caverna",
-      "montanha"
+      "Electric",
+      "Flying"
     ],
     "base": {
       "HP": 90,
@@ -2972,8 +2972,8 @@
       "french": "Sulfura"
     },
     "type": [
-      "vulcao",
-      "montanha"
+      "Fire",
+      "Flying"
     ],
     "base": {
       "HP": 90,
@@ -3034,7 +3034,7 @@
     },
     "type": [
       "Dragon",
-      "montanha"
+      "Flying"
     ],
     "base": {
       "HP": 91,
@@ -3085,4 +3085,4 @@
       "Speed": 100
     }
   }
-]
+  ]

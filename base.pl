@@ -1,13 +1,24 @@
 #base.pl
 
-:- dynamic localizacao/2, visitado/2, pokebolas/1, mapa/3, mapaEntidades/3, pontos/1, pokemon/1, visao/1, recuperado/1, pokemonsCapturados/1, mapaPontos/3, tipo/2, podeAndar/1.
+:- dynamic localizacao/2,
+  visitado/2,
+  pokebolas/1,
+  mapa/3,
+  mapaEntidades/3,
+  pontos/1,
+  pokemon/2,
+  visao/1,
+  recuperado/1,
+  pokemonsCapturados/1,
+  mapaPontos/3,
+  podeAndar/1,
+  log/1.
 
-% pokemon(pikachu, elétrico).
+% pokemon(pikachu, [elétrico]).
 % mapa(1, 2, agua).
 % mapaEntidades(5, 6, treinador).
-% mapaEntidades(5, 7, pokemon(ratata)).
+% mapaEntidades(5, 7, pokemon('Ratata', ['Normal'])).
 % mapaPontos(19, 25, 9).
-% tipo(ratata, normal)
 % podeAndar(agua)
 
 localizacao(19, 24).
@@ -17,6 +28,9 @@ pokebolas(25).
 pontos(0).
 pokemonsCapturados(0).
 recuperado(1).
+log([]).
+
+registrarLog(X) :- retract(log(L)), assert(log([X | L])), !.
 
 adicionarPontos(X) :-
   retract(pontos(Pontos)),
@@ -48,19 +62,21 @@ virarDireita :-
   Virado is (Posicao + 3) mod 4,
   retract(visao(Posicao)),
   assert(visao(Virado)),
-  adicionarPontos(-1).
+  adicionarPontos(-1),
+  registrarLog('Girou para direita.').
 
 virarEsquerda :-
   visao(Posicao),
   Virado is (Posicao + 1) mod 4,
   retract(visao(Posicao)),
   assert(visao(Virado)),
-  adicionarPontos(-1).
+  adicionarPontos(-1),
+  registrarLog('Girou para esquerda.').
 
-andarParaFrente :- visao(0), mudarLocalizacao(1, 0), adicionarPontos(-1),!.
-andarParaFrente :- visao(1), mudarLocalizacao(0, 1), adicionarPontos(-1),!.
-andarParaFrente :- visao(2), mudarLocalizacao(-1, 0), adicionarPontos(-1),!.
-andarParaFrente :- visao(3), mudarLocalizacao(0, -1), adicionarPontos(-1),!.
+andarParaFrente :- visao(0), mudarLocalizacao(1, 0), adicionarPontos(-1), registrarLog('Andou para frente.'),!.
+andarParaFrente :- visao(1), mudarLocalizacao(0, 1), adicionarPontos(-1), registrarLog('Andou para frente.'),!.
+andarParaFrente :- visao(2), mudarLocalizacao(-1, 0), adicionarPontos(-1), registrarLog('Andou para frente.'),!.
+andarParaFrente :- visao(3), mudarLocalizacao(0, -1), adicionarPontos(-1), registrarLog('Andou para frente.'),!.
 
 girarParaCima :- visao(0), virarDireita, virarDireita,!.
 girarParaCima :- visao(1), virarEsquerda,!.
@@ -95,7 +111,8 @@ recuperarPokemons :-
   mapaEntidades(X, Y, centroPokemon),
   retract(recuperado(Recuperado)),
   assert(recuperado(1)),
-  adicionarPontos(-100),!.
+  adicionarPontos(-100),
+  registrarLog('Recuperou pokemons no Centro Pokémon.'),!.
 
 resultadoDaBatalha :- recuperado(0), adicionarPontos(-1000),!.
 resultadoDaBatalha :- recuperado(1), adicionarPontos(150), retract(recuperado(1)), assert(recuperado(0)),!.
@@ -105,7 +122,8 @@ batalharContraTreinador :-
   mapaEntidades(X, Y, treinador),
   resultadoDaBatalha,
   retract(mapaEntidades(X, Y, treinador)),
-  assert(mapaEntidades(X, Y, vazio)).
+  assert(mapaEntidades(X, Y, vazio)),
+  registrarLog('Batalhou contra um treinador.').
 
 precisaPegarBolas :-
   pokebolas(Bolas),
@@ -119,84 +137,80 @@ pegarPokebolas :-
   retract(mapaEntidades(X, Y, loja)),
   assert(mapaEntidades(X, Y, vazio)),
   adicionarBolas(25),
-  adicionarPontos(-10).
+  adicionarPontos(-10),
+  registrarLog('Pegou pokebolas na loja.').
 
-adicionarTipoPodeAndar(X) :-
-  podeAndar(agua),
-  podeAndar(vulcao),
-  podeAndar(montanha),
-  podeAndar(caverna),
-  pokemon(X),
-  retractall(tipo(X, _)), !.
+adicionarTipoPodeAndar(Pokemon) :-
+  podeAndar('Água'),
+  podeAndar('Vulcão'),
+  podeAndar('Montanha'),
+  podeAndar('Caverna'),!.
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, agua),
-  podeAndar(agua),
-  retract(tipo(X, agua)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Water', Tipos),
+  podeAndar('Água').
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, agua),
-  not(podeAndar(agua)),
-  assert(podeAndar(agua)),
-  retract(tipo(X, agua)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Water', Tipos),
+  not(podeAndar('Água')),
+  assert(podeAndar('Água')).
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, vulcao),
-  podeAndar(vulcao),
-  retract(tipo(X, vulcao)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Fire', Tipos),
+  podeAndar('Vulcão').
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, vulcao),
-  not(podeAndar(vulcao)),
-  assert(podeAndar(vulcao)),
-  retract(tipo(X, vulcao)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Fire', Tipos),
+  not(podeAndar('Vulcão')),
+  assert(podeAndar('Vulcão')).
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, montanha),
-  podeAndar(montanha),
-  retract(tipo(X, montanha)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Flying', Tipos),
+  podeAndar('Montanha').
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, montanha),
-  not(podeAndar(montanha)),
-  assert(podeAndar(montanha)),
-  retract(tipo(X, montanha)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Flying', Tipos),
+  not(podeAndar('Montanha')),
+  assert(podeAndar('Montanha')).
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, caverna),
-  podeAndar(caverna),
-  retract(tipo(X, caverna)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Electric', Tipos),
+  podeAndar('Caverna').
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  tipo(X, caverna),
-  not(podeAndar(caverna)),
-  assert(podeAndar(caverna)),
-  retract(tipo(X, caverna)).
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Electric', Tipos),
+  not(podeAndar('Caverna')),
+  assert(podeAndar('Caverna')),!.
 
-adicionarTipoPodeAndar(X) :-
-  pokemon(X),
-  retractall(tipo(X, _)), !.
+adicionarTipoPodeAndar(Pokemon) :-
+  pokemon(Pokemon, Tipos),
+  member('Electric', Tipos),
+  not(podeAndar('Caverna')),
+  assert(podeAndar('Caverna')),!.
+
+adicionarTipoPodeAndar(Pokemon) :- !.
 
 capturar :-
   localizacao(X, Y),
   pokebolas(Bolas),
   Bolas > 0,
-  mapaEntidades(X, Y, pokemon(Pokemon)),
-  retract(mapaEntidades(X, Y, pokemon(Pokemon))),
+  retract(mapaEntidades(X, Y, pokemon(Pokemon, Tipos))),
   assert(mapaEntidades(X, Y, vazio)),
-  assert(pokemon(Pokemon)),
+  assert(pokemon(Pokemon, Tipos)),
   adicionarTipoPodeAndar(Pokemon),
   adicionarBolas(-1),
   adicionarPokemonCapturado(1),
-  adicionarPontos(-5).
+  adicionarPontos(-5),
+  string_concat('Capturou ', Pokemon, Log),
+  registrarLog(Log).
 
 calcularDistancia(X1, Y1, X2, Y2, Distancia) :-
   DX is abs(X1 - X2),
@@ -209,7 +223,7 @@ naoVisitado(L, C) :-
   L is X,
   C is Y,!.
 
-podeMover(X, Y) :- mapa(X, Y, grama),!.
+podeMover(X, Y) :- mapa(X, Y, 'Grama'),!.
 podeMover(X, Y) :- mapa(X, Y, T), podeAndar(T),!.
 
 verificarBloco(X, Y) :- retract(mapaPontos(X, Y, _)).
@@ -265,7 +279,7 @@ blocoLado(X, Y) :-
 
 verificarBloco(X, Y) :-
   podeMover(X, Y),
-  mapaEntidades(X, Y, pokemon(Pokemon)),
+  mapaEntidades(X, Y, pokemon(Pokemon, _)),
   pokebolas(Bolas),
   Bolas > 0,
   assert(mapaPontos(X, Y, 200)),!.
@@ -285,7 +299,7 @@ verificarBloco(X, Y) :-
 verificarBloco(X, Y) :-
   podeMover(X, Y),
   mapaEntidades(X, Y, treinador),
-  pokemon(_),
+  pokemon(_, _),
   recuperado(1),
   assert(mapaPontos(X, Y, 130)),!.
 
@@ -296,10 +310,21 @@ verificarBloco(X, Y) :-
 
 verificarBloco(X, Y) :-
   podeMover(X, Y),
-  podeAndar(agua),
-  podeAndar(vulcao),
-  podeAndar(montanha),
-  podeAndar(caverna),
+  podeAndar('Água'),
+  podeAndar('Vulcão'),
+  podeAndar('Montanha'),
+  podeAndar('Caverna'),
+  mapaEntidades(W, Z, pokemon(_, _)),
+  calcularDistancia(X, Y, W, Z, Distancia),
+  Pontos is 110 - Distancia,
+  assert(mapaPontos(X, Y, Pontos)),!.
+
+verificarBloco(X, Y) :-
+  podeMover(X, Y),
+  podeAndar('Água'),
+  podeAndar('Vulcão'),
+  podeAndar('Montanha'),
+  podeAndar('Caverna'),
   naoVisitado(W, Z),
   calcularDistancia(X, Y, W, Z, Distancia),
   Pontos is 110 - Distancia,
@@ -308,18 +333,18 @@ verificarBloco(X, Y) :-
 verificarBloco(X, Y) :-
   podeMover(X, Y),
   blocoFrente(X, Y),
-  random(0, 90, Rand),
+  random(60, 90, Rand),
   assert(mapaPontos(X, Y, 90)),!.
 
 verificarBloco(X, Y) :-
   podeMover(X, Y),
   blocoLado(X, Y),
-  random(0, 80, Rand),
+  random(50, 90, Rand),
   assert(mapaPontos(X, Y, Rand)),!.
 
 verificarBloco(X, Y) :-
   podeMover(X, Y),
-  random(0, 60, Rand),
+  random(40, 90, Rand),
   assert(mapaPontos(X, Y, Rand)),!.
 
 movimento(A, B, C, D) :- A >= B, A >= C, A >= D, moverParaBaixo,!.
@@ -346,5 +371,5 @@ mover :-
 acao :- capturar,!.
 acao :- pegarPokebolas,!.
 acao :- recuperado(0), recuperarPokemons,!.
-acao :- recuperado(1), pokemon(_), batalharContraTreinador,!.
+acao :- recuperado(1), pokemon(_, _), batalharContraTreinador,!.
 acao :- mover,!.
